@@ -1,6 +1,5 @@
 // Get user from local storage
 users = JSON.parse(localStorage.getItem("users")) || [];
-let user = users.find(user => user.isLoggedIn == true);
 
 let bag = document.getElementById('bag')
 let favorite = document.getElementById('favorite')
