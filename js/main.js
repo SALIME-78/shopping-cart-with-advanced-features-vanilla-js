@@ -81,7 +81,7 @@ function addToCart(productId) {
     window.location.href = "login.html"
   }
 
-  if(!user || user == null ||user.isLoggedIn == false){
+  if(!user || user == null || user.isLoggedIn == false){
     alert('Please Login First !')
     window.location.href = "login.html"
   }
