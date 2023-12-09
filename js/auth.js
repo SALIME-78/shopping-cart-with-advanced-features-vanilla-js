@@ -46,20 +46,11 @@ function login() {
 function logout() {
     
     let user = users.find(User => User.isLoggedIn == true)
-    console.log(user)
+
     user.isLoggedIn = false
     
     localStorage.setItem("users", JSON.stringify(users));
+
+    window.location.href = "login.html";
 }
 
-// Show Register Form and Hide Login Form
-function showRegisterForm() {
-    document.getElementById("register-form").style.display = "block";
-    document.getElementById("login-form").style.display = "none";
-}
-
-// Show Login Form and Hide Register Form
-function showLoginForm() {
-    document.getElementById("register-form").style.display = "none";
-    document.getElementById("login-form").style.display = "block";
-}
