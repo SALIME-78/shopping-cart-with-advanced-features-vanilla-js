@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Shopping Cart</title>
+</head>
+
+<body id="body">
+  <header class="mb-2">
+    <nav class="navbar navbar-expand-lg p-3" style="background: #eceaea; box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);">
+      <div class="container-fluid mx-5">
+        <a class="navbar-brand" href="#" style="font-family: Merienda">SALIME SHOP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item links">
+              <a class="nav-link mx-2" href="index.html">All Products</a>
+            </li>
+            <li class="nav-item links" onclick="goWishList()">
+              <a class="nav-link mx-2"><i class="fa-solid fa-heart position-relative"
+                style="color: #0a0a0a; font-size: 28px;">
+                <span class="favorite position-absolute" id="favorite">0</span></i></a>
+            </li>
+            <ul class="top-navigation top-navigation-content position-relative">
+              <li class="top-dropdown-menu-container">
+                <a id="show-dropdown-menu" href=""><i class="fas fa-user-circle u-s-m-r-6"
+                    style="font-size: 28px;"></i></a>
+                <ul class="dropdown-content d-none">
+                  <li class="h-25"><a href="#"><i class="fas fa-user-circle u-s-m-r-6"></i><span
+                        id="account">Account</span></a></li>
+                  <li id="profile" class="h-25 d-none"><a href="#"><i class="fa-solid fa-user-pen"></i><span>Edit
+                        Profile</span></a>
+                  </li>
+                  <li id="settings" class="h-25 d-none"><a href="#"><i
+                        class="fa-solid fa-screwdriver-wrench"></i><span>Settings</span></a>
+                  <li id="signup" class="h-25"><a href="signup.html"><i
+                        class="fas fa-user-plus u-s-m-r-6"></i><span>Signup</span></a>
+                  </li>
+                  <li id="signin" class="h-25""><a href=" login.html"><i
+                      class="fas fa-lock u-s-m-r-6"></i><span>Signin</span></a>
+                  </li>
+                  <li class="logout h-25" onclick="logout()"><a href="signup.html"><i class="fa-solid fa-copyright"></i><span>Rights</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <li id="bag-container" class="nav-item" onclick="goToCart()">
+              <a class="nav-link mx-2"><i class="fa-solid fa-lg fa-bag-shopping position-relative"
+                  style="color: #0a0a0a;">
+                  <span class="bag position-absolute" id="bag">0</span></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="w-100 mt-5 d-flex flex-column align-items-center">
+      <p id="already-in-cart" class="bg-warning fw-bold w-100 container m-auto d-none mb-3"
+        style="color: white; font-weight: bold; text-align: center; padding: 10px 0; border-radius: 5px;">Already In
+        Cart
+      </p>
+      <p id="success" class="bg-success fw-bold w-100 container m-auto mb-3 d-none"
+        style="color: white; font-weight: bold; text-align: center; padding: 10px 0; border-radius: 5px;">Successfully
+        Added To Cart
+      </p>
+
+      <div class="d-flex justify-content-center w-100 gap-5">
+        <input class="form-control" id="search-products" placeholder="Search Products"
+          onkeyup="searchProducts(this.value)" style="width: 34%;">
+        <div id="select-category" style="width: 20%;">
+          <select class="form-select" id="select-by-category">
+            <option value="All" selected>Select a category</option>
+            <option value="E-Books">E-Books</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Laptops">Laptops</option>
+            <option value="Phones">Phones</option>
+          </select>
+        </div>
+        <div id="select-price" style="width: 20%;">
+          <select class="form-select" id="select-by-price">
+            <option value="All" selected>Sort by price</option>
+            <option value="100">under 100</option>
+            <option value="300">under 300</option>
+            <option value="500">under 500</option>
+            <option value="700">under 700</option>
+            <option value="900">under 900</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main-content" class="container d-flex justify-content-center">
+    <div id="product-list" class="d-flex" style="width: 100%;">
+      <!-- Products will be added here dynamicaly -->
+    </div>
+  </div>
+
+  <script>
+    let showDropdwonMenu = document.getElementById("show-dropdown-menu")
+    let dropdownMenu = document.querySelector(".dropdown-content")
+
+    showDropdwonMenu.addEventListener("click", (e) => {
+      e.preventDefault()
+      dropdownMenu.classList.toggle("d-none");
+    });
+    dropdownMenu.addEventListener('mouseleave', () => {
+      dropdownMenu.classList.add("d-none")
+    })
+
+    function goWishList() {
+      let users = JSON.parse(localStorage.getItem("users"));
+      if (users == null || users.length < 1 || users == []) {
+        alert("Please Login to show your wishlist !");
+      }else {
+        users.find(user => {
+          if(user.isLoggedIn==false || !user){
+            alert("Please Login to show your wishlist !");
+          }else{
+            window.location.href = "wishlist.html";
+          }
+
+        })
+        
+      }
+  
+    }
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="js/products.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
