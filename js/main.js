@@ -1,4 +1,5 @@
 // Get user from local storage
+users = JSON.parse(localStorage.getItem("users")) || [];
 let user = users.find(user => user.isLoggedIn == true);
 
 let bag = document.getElementById('bag')
@@ -79,6 +80,7 @@ function addToCart(productId) {
   if(users==[] || users == null || users.length < 1){
     alert('Please Login First')
     window.location.href = "login.html"
+    return
   }
 
   if(!user || user == null || user.isLoggedIn == false){
