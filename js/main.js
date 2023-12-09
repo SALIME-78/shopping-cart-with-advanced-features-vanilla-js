@@ -15,8 +15,9 @@ users.find(user => {
     document.getElementById("settings").classList.add('d-block')
     document.getElementById("signup").style.display = "none";
     document.getElementById("signin").style.display = "none";
-    document.getElementById("logout").style.display = "block";
-    document.getElementById("rights").style.display = "none";
+    document.getElementById("logout").classList.add("d-block");
+    document.getElementById("logout").classList.remove("d-none");
+    document.getElementById("rights").classList.add("d-none");
 
     bag.textContent = `${user.cart.length}`
 
