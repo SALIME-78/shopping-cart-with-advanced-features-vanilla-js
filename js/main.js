@@ -26,7 +26,7 @@ function goToCart() {
     alert("Please Login to show your cart !")
     window.location.href = "login.html"
 }else{
-  user = users.find(user => user.isLoggedIn == true)
+  let user = users.find(user => user.isLoggedIn == true)
   if(!user){
     alert('Please Login First')
     window.location.href = "login.html"
@@ -82,9 +82,12 @@ function addToCart(productId) {
     return
   }
 
+  let user = users.find(user => user.isLoggedIn == true)
+  
   if(!user || user == null || user.isLoggedIn == false){
     alert('Please Login First !')
     window.location.href = "login.html"
+    return
   }
   
   const success = document.getElementById("success");
