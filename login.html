@@ -46,16 +46,6 @@
   </div>
 
   <script>
-    let showDropdwonMenu = document.getElementById("show-dropdown-menu")
-    let dropdownMenu = document.querySelector(".dropdown-content")
- 
-    showDropdwonMenu.addEventListener("click", (e)=>{
-     e.preventDefault()
-     dropdownMenu.classList.toggle("d-none");
-    });
-    dropdownMenu.addEventListener('mouseleave', ()=>{
-     dropdownMenu.classList.add("d-none")
-    })
 
     function goWishList() {
       let users = JSON.parse(localStorage.getItem("users"));
