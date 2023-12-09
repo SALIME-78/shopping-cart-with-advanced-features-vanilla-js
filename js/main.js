@@ -1,4 +1,4 @@
-// Get user from local storage
+// Get users from local storage
 users = JSON.parse(localStorage.getItem("users")) || [];
 
 let bag = document.getElementById('bag')
