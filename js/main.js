@@ -1,4 +1,4 @@
-// Get users from local storage
+// Get user from local storage
 let user = users.find(user => user.isLoggedIn == true);
 
 let bag = document.getElementById('bag')
@@ -185,7 +185,7 @@ selectElement.addEventListener('change', function() {
 
 let selectByPrice = document.getElementById('select-by-price')
 
-// Filter products by price
+// sort products by price
 selectByPrice.addEventListener('change', function() {
 
   let selectedByPrice = Number(selectByPrice.value);
@@ -209,6 +209,7 @@ selectByPrice.addEventListener('change', function() {
   
 });
 
+// add a product to wishlist
 function addToWishlist(productId) {
 
   if(users==[] || users == null || users.length < 1){
@@ -229,8 +230,6 @@ function addToWishlist(productId) {
     alert('Product Already In WishList !')
     return
   }else {
-   /*  let wishItem = document.querySelector('.wish-item')
-    console.log(wishItem) */
 
     const product = products.find((item) => item.id === productId);
     user.wishList.push(product)

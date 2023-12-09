@@ -6,7 +6,7 @@ let user = users.find(User => {
 
 clearCartBtn = document.getElementById("clear-cart");
 
-// Fuction to update displaying cart
+// update displaying cart
 function updateCart() {
   const cartContainer = document.getElementById("cartContainer");
   const totalCartPrice = document.getElementById("total-price");
@@ -59,7 +59,7 @@ function updateCart() {
     clearCartBtn.classList.add("btn", "btn-danger");
   });
 
-  // Afficher le prix total des produits ajoutés au panier
+  // display total price for all items
   totalCartPrice.innerHTML = `Total To Pay: <strong style="color: #000; font-size: 20px">${total}<sup>$</sup></strong>`;
 }
 

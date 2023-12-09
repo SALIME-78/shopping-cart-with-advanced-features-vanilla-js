@@ -8,6 +8,7 @@ body {
   background-color: #eceaea;
 }
 
+/*************** Start styling header ***************/
 .nav-item .fa-bag-shopping {
   font-size: 28px;
   color: #ffffff
@@ -122,6 +123,9 @@ body {
   text-align: center;
 }
 
+/*************** End styling header **************/
+
+/*************** Index.html styles ***************/
 #product-list {
   display: flex;
   justify-content: center;
@@ -216,7 +220,7 @@ body {
   margin: 0px auto;
 }
 
-/* Styling login page */
+/************** Styling login and signup pages *******************/
 
 .text-black {
   color: #000;
