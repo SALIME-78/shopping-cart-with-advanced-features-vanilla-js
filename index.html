@@ -132,6 +132,7 @@
         users.find(user => {
           if(user.isLoggedIn==false || !user){
             alert("Please Login to show your wishlist !");
+            window.location.href = "login.html"
           }else{
             window.location.href = "wishlist.html";
           }
