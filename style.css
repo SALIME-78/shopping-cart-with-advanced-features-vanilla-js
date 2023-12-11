@@ -371,7 +371,7 @@ body {
 }
 @media screen and (max-width: 580px) {
   .contact-wrap {
-      width: 80% !important;
+      width: 90% !important;
  
   }
   .form-footer {
