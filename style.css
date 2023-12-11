@@ -365,6 +365,9 @@ body {
   .contact-wrap {
     width: 60% !important;
   } 
+  .my-sm {
+    margin-top: 20px
+  }
 }
 @media screen and (max-width: 580px) {
   .contact-wrap {
@@ -376,6 +379,17 @@ body {
   }
   .form-footer p {
     margin-bottom: 5px !important;
+  }
+  .my-sm {
+    margin-top: 20px
+  }
+  .search-sort-container {
+    flex-direction: column; 
+    align-items: center;
+    width: 65% !important;
+  }
+  .search-sort-container input, .search-sort-container div {
+    width: 90% !important;
   }
 }	
 

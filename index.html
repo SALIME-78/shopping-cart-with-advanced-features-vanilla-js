@@ -28,17 +28,17 @@
 
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item links">
+            <li class="nav-item links my-sm">
               <a class="nav-link mx-2" href="index.html">All Products</a>
             </li>
-            <li class="nav-item links" onclick="goWishList()">
+            <li class="nav-item links my-sm" onclick="goWishList()">
               <a class="nav-link mx-2"><i class="fa-solid fa-heart position-relative"
                 style="color: #0a0a0a; font-size: 28px;">
                 <span class="favorite position-absolute" id="favorite">0</span></i></a>
             </li>
             <ul class="top-navigation top-navigation-content position-relative">
               <li class="top-dropdown-menu-container">
-                <a id="show-dropdown-menu" href=""><i class="fas fa-user-circle u-s-m-r-6"
+                <a id="show-dropdown-menu" href=""><i class="fas fa-user-circle u-s-m-r-6 my-sm"
                     style="font-size: 28px;"></i></a>
                 <ul class="dropdown-content d-none">
                   <li class="h-25"><a href="#"><i class="fas fa-user-circle u-s-m-r-6"></i><span
@@ -61,7 +61,7 @@
                 </ul>
               </li>
             </ul>
-            <li id="bag-container" class="nav-item" onclick="goToCart()">
+            <li id="bag-container" class="nav-item my-sm" onclick="goToCart()">
               <a class="nav-link mx-2"><i class="fa-solid fa-lg fa-bag-shopping position-relative"
                   style="color: #0a0a0a;">
                   <span class="bag position-absolute" id="bag">0</span></i></a>
@@ -83,7 +83,7 @@
         Added To Cart
       </p>
 
-      <div class="d-flex justify-content-center w-100 gap-5">
+      <div class="search-sort-container d-flex justify-content-center w-100 gap-5">
         <input class="form-control" id="search-products" placeholder="Search Products"
           onkeyup="searchProducts(this.value)" style="width: 34%;">
         <div id="select-category" style="width: 20%;">
