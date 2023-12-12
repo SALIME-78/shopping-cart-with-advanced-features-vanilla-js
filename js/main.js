@@ -159,10 +159,7 @@ function searchProducts(s){
       searchedProducts += showDesiredproducts(product)
     })
 
-	document.getElementById("product-list").innerHTML = searchedProducts;
-  if(searchBar.value ==""){
-    trs=""
-  }  
+	document.getElementById("product-list").innerHTML = searchedProducts;  
 }
 
 let selectElement = document.getElementById('select-by-category');
