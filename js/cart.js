@@ -107,8 +107,6 @@ function removeItem(productId) {
   });
 }
 
-updateCart();
-
 // Clear Cart
 function emptyCart() {
   user.cart = [];
@@ -116,3 +114,5 @@ function emptyCart() {
   localStorage.setItem("users", JSON.stringify(users));
   updateCart();
 }
+
+updateCart();
