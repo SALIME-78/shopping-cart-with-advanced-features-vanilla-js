@@ -49,7 +49,7 @@ function updateCart() {
              <span class="mx-2">${item.quantity}</span>
              <span onclick="increaseQuantity(${item.id})"><i class="fa-regular fa-square-plus" style="color: #4e7f34;cursor:pointer;font-size:26px"></i></span>
              </div>
-             <p id="prix-total" class="mx-5 my-0">total Price: $${productTotal}</p>
+             <p class="mx-5 my-0">total Price: $${productTotal}</p>
              <span onclick="removeItem(${item.id})"><i class="fa-regular fa-trash-can fw-bold" style="color: #e02e37; font-size: 25px; cursor: pointer"></i></span>
         </div>
       `;
