@@ -26,13 +26,12 @@ function updateCart() {
     cartContainer.appendChild(noItemInCart)
     noItemInCart.classList.add('mt-5', 'pt-5')
     noItemInCart.innerHTML = `<h5 class="text-center">No Item In The Cart</h5>`
-
   }
 
   // Browse products in cart
   user.cart.forEach((item) => {
-    const productTotal = item.price * item.quantity;
-    total += productTotal;
+    const productTotalPrice = item.price * item.quantity;
+    total += productTotalPrice;
 
     // create html elements to display items in cart
     const productElement = document.createElement("div");
@@ -49,7 +48,8 @@ function updateCart() {
              <span class="mx-2">${item.quantity}</span>
              <span onclick="increaseQuantity(${item.id})"><i class="fa-regular fa-square-plus" style="color: #4e7f34;cursor:pointer;font-size:26px"></i></span>
              </div>
-             <p class="mx-5 my-0">total Price: $${productTotal}</p>
+             <p
+              class="mx-5 my-0">total Price: $${productTotalPrice}</p>
              <span onclick="removeItem(${item.id})"><i class="fa-regular fa-trash-can fw-bold" style="color: #e02e37; font-size: 25px; cursor: pointer"></i></span>
         </div>
       `;
