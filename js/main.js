@@ -20,6 +20,7 @@ users.find(user => {
     document.getElementById("rights").classList.add("d-none");
 
     bag.textContent = `${user.cart.length}`
+    favorite.textContent = `${user.wishList.length}`
 
   }
 })
@@ -204,6 +205,21 @@ selectByPrice.addEventListener('change', function() {
   }
   
   let searchedByPrice = ""
+
+  if(selectByPrice.value == "low"){
+    let sortedProducts = products.sort((low, high) => low.price - high.price);
+    sortedProducts.forEach((product)=>{
+      searchedByPrice += showDesiredproducts(product)
+    })
+    
+  }
+
+  if(selectByPrice.value == "high"){
+    let sortedProducts = products.sort((low, high) => high.price - low.price);
+    sortedProducts.forEach((product)=>{
+      searchedByPrice += showDesiredproducts(product)
+    })
+  }
 
   filteredProducts.forEach((product)=>{
     searchedByPrice += showDesiredproducts(product)
